@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Disease Prediction</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+<link rel="manifest" href="/static/site.webmanifest">
+
+
+   <style>
+    body
+{
+  margin: 0em;
+}
+
+.main{
+  width:100% ;
+  height: 100vh;
+  background: url('/static/doctor.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.forms{
+  background: url('/static/back.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.lebels{
+  background-color: rgb(255, 0, 255);
+  color: aliceblue;
+  font-weight: bold;
+}
+  </style>
+ </head>
+ <body class="bg-primary">
+ 
+   <div class="container-fluid main">
+     <h1 style="text-align: center; color: white; font-weight: bold;">Hey Man I'm Virtual Doctor</h1>
+     <h1 style="text-align: center; color: white; font-weight: bold;">I take care of your health. <i class="fa fa-stethoscope" style="font-size:48px;color:red"></i></h1>
+
+       <div class="container class forms">
+        <form action="/result" method="POST" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <span class="input-group-text lebels">Age  </span>
+                </div>
+                <input type="number" min="0" name="age" class="form-control" aria-label="Units" required>
+                <div class="input-group-append ">
+                  <span class="input-group-text units">Years</span>
+                </div>
+           
+              </div>
+
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend" >
+                  <span class="input-group-text lebels">Chest  </span>
+                </div>
+                <input type="number" min="0" name="chest" class="form-control" aria-label="Units" required>
+                <div class="input-group-append ">
+                  <span class="input-group-text units">inchs</span>
+                </div>
+           
+              </div>
+
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <span class="input-group-text lebels">Serum Cholestoral  </span>
+                </div>
+                <input type="number" min="0" name="serum_cholestoral" class="form-control" aria-label="Units" required>
+                <div class="input-group-append ">
+                  <span class="input-group-text units">Units</span>
+                </div>
+           
+              </div>
+
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <span class="input-group-text lebels">Resting Blood Pressure  </span>
+                </div>
+                <input type="number" min="0" name="resting_blood_pressure" class="form-control" aria-label="Units" required>
+                <div class="input-group-append ">
+                  <span class="input-group-text units">Units</span>
+                </div>
+           
+              </div>
+
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <span class="input-group-text lebels">Maximum Heart Rate  </span>
+                </div>
+                <input type="number" min="0" name="maximum_heart_rate_achieved"  max="200" class="form-control" aria-label="Units" required>
+                <div class="input-group-append ">
+                  <span class="input-group-text units">Units</span>
+                </div>
+           
+              </div>
+
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <span class="input-group-text lebels">Oldpeak </span>
+                </div>
+                <input type="number" min="0" name="oldpeak" class="form-control" aria-label="Units" required>
+                <div class="input-group-append ">
+                  <span class="input-group-text units">Units</span>
+                </div>
+           
+              </div>
+
+              
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <span class="input-group-text lebels">Thal </span>
+                </div>
+                <input type="number" min="0" name="thal" class="form-control" aria-label="Units" required>
+                <div class="input-group-append ">
+                  <span class="input-group-text units">Units</span>
+                </div>
+           
+              </div>
+
+            </div>
+            <div class="col-sm-6">
+              <div class="input-group  mb-3" >
+                <div class="input-group-prepend ">
+                  <label class="input-group-text lebels" for="inputGroupSelect01" >Gender</label>
+                </div>
+                <select class="browser-default custom-select" name="gender" id="inputGroupSelect01" required>
+                  <option value="">Choose...</option>
+                  <option value="0">Male</option>
+                  <option value="1">Female</option>
+                  <option value="3">Other</option>
+                </select>
+
+           
+              </div>
+
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <label class="input-group-text lebels" for="inputGroupSelect01">Resting Electrocardiographic Results</label>
+                </div>
+                <select class="browser-default custom-select" name="resting_electrocardiographic_results" id="inputGroupSelect01" required>
+                  <option value="">Choose...</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+           
+              </div>
+
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <label class="input-group-text lebels" for="inputGroupSelect01">Exercise Induced Angina</label>
+                </div>
+                <select class="browser-default custom-select" name="exercise_induced_angina" id="inputGroupSelect01" required>
+                  <option value="">Choose...</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+           
+              </div>
+
+
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <label class="input-group-text lebels" for="inputGroupSelect01">Fasting Blood Sugar</label>
+                </div>
+                <select class="browser-default custom-select" name="fasting_blood_sugar" id="inputGroupSelect01" required>
+                  <option value="">Choose...</option>
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <label class="input-group-text lebels" for="inputGroupSelect01">Slope</label>
+                </div>
+                <select class="browser-default custom-select" name="slope" id="inputGroupSelect01" required>
+                  <option value="">Choose...</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+           
+              </div>
+
+              <div class="input-group  mb-3">
+                <div class="input-group-prepend ">
+                  <label class="input-group-text lebels" for="inputGroupSelect01">Number of Major Vessels</label>
+                </div>
+                <select class="browser-default custom-select" name="number_of_major_vessels" id="inputGroupSelect01" required>
+                  <option value="">Choose...</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+           
+              </div>
+
+           </div>
+           <button type="submit" class="btn btn-warning">Submit</button>
+          </div>
+        </form>
+       </div>
+   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+ </body>
+</html>
